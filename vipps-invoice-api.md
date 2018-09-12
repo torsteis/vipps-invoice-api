@@ -231,16 +231,30 @@ Ocp-Apim-Subscription-Key : ***
 client_secret : ***
 client_id : ***
 
-{"token_type":"Bearer","expires_in":"86398","ext_expires_in":"0","expires_on":"1536840154","not_before":"1536753455",
-"resource":"00000002-0000-0000-c000-00000000000","access_token":"***"}
+-- Response
+{
+  "token_type":"Bearer",
+  "expires_in":"86398",
+  "ext_expires_in":"0",
+  "expires_on":"1536840154",
+  "not_before":"1536753455",
+  "resource":"00000002-0000-0000-c000-00000000000",
+  "access_token":"***"
+}
 
 -- Get recipient token
 POST https://apitest.vipps.no/vipps-ipp/v1/recipients/tokens
 Authorization : ***
 Ocp-Apim-Subscription-Key : ***
-{"type": "nin-no", "value":"010298******"}
+{
+  "type": "nin-no", 
+  "value":"010298******"
+}
 
-{"recipientToken":"***"}
+-- Response
+{
+ "recipientToken":"***"
+}
 
 -- Get invoices
 https://apitest.vipps.no/vipps-ipp/v1/invoices
@@ -248,7 +262,8 @@ Authorization : ***
 Ocp-Apim-Subscription-Key : ***
 vippsinvoice-recipienttoken : ***
 
-[{
+[
+{
   "invoiceId": "orgno-no.123123123.047770296",
   "paymentInformation": {
     "type": "kid",
@@ -293,6 +308,7 @@ vippsinvoice-recipienttoken : ***
   },
   "created": ""
 }
+]
 ~~~~
 ## National identity number (NIN), or phone number (MSISDN), not available
 
